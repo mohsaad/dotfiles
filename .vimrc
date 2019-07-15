@@ -30,6 +30,14 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " Make comments white.
 hi comment ctermfg=white
 
+" highlight trailing whitespace
+highlight ws ctermbg=red guibg=red
+match ws /\s\+$/
+autocmd BufWinEnter * match ws / \+$/
+
+" remove trailing whitespace with F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
 " English to Arabic.
 nnoremap <Leader>e :<C-U>call EngType()<CR>
 
