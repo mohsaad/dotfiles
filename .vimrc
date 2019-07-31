@@ -11,10 +11,13 @@ set splitbelow
 let mapleader=","
 set showcmd
 
+" Set autoread to be on
+set autoread
+
 execute pathogen#infect()
 call pathogen#helptags()
 
-"Open NerdTree if no files open
+" Open NerdTree if no files open
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
@@ -22,7 +25,10 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 
 " Map uppercase W to lowercase w to save automatically.
-map W w
+command WQ wq
+command Wq wq
+command W w
+command Q q
 
 " Close vim if only window left is NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
@@ -46,16 +52,22 @@ nnoremap <Leader>a :<C-U>call AraType()<CR>
 
 " Swtich to English - function
 function! EngType()
-" To switch back from arabic
+  " To switch back from arabic
   set keymap= "Restore default US keyboard
   set norightleft
 endfunction
 
 " Switch to Arabic - function
 function! AraType()
-  set keymap=arabic 
+  set keymap=arabic
   set rightleft
 endfunction
+
+" Load YCM extra files all the time
+let g:ycm_extra_conf_globlist = ['~/*']
+
+" Close preview window after completion
+let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Vundle plugins
 set nocompatible
@@ -70,6 +82,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Tmux navigator
 Plugin 'christoomey/vim-tmux-navigator'
+
+" YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
