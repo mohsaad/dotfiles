@@ -36,6 +36,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " Make comments white.
 hi comment ctermfg=white
 
+" Set statusbar to be 2 units
+set laststatus=2
+
 " highlight trailing whitespace
 highlight ws ctermbg=red guibg=red
 match ws /\s\+$/
@@ -69,6 +72,12 @@ let g:ycm_extra_conf_globlist = ['~/*']
 " Close preview window after completion
 let g:ycm_autoclose_preview_window_after_completion = 1
 
+" Auto format on save
+let g:clang_format#auto_format = 1
+
+" Set airline theme
+let g:airline_theme = 'angr'
+
 " Vundle plugins
 set nocompatible
 filetype off
@@ -77,14 +86,33 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+" Statusline, totally stealing from Ryan Wolcott
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+" NerdTREE
+Plugin 'scrooloose/nerdtree'
 
 " Tmux navigator
 Plugin 'christoomey/vim-tmux-navigator'
 
 " YouCompleteMe
 Plugin 'Valloric/YouCompleteMe'
+
+" Fugitive
+Plugin 'tpope/vim-fugitive'
+
+" Clang-format
+Plugin 'rhysd/vim-clang-format'
+
+" NerdTree Vim plugin
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+" Vim-airline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
