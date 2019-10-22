@@ -14,9 +14,6 @@ set showcmd
 " Set autoread to be on
 set autoread
 
-execute pathogen#infect()
-call pathogen#helptags()
-
 " Open NerdTree if no files open
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
