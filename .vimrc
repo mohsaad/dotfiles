@@ -110,6 +110,14 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+" Vim-wiki
+Plugin 'vimwiki/vimwiki'
+
+" Vim-obsession
+Plugin 'tpope/vim-obsession'
+
+" CtrlP (fuzzy file search)
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
