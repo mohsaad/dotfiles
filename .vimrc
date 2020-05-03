@@ -30,8 +30,8 @@ command Q q
 " Close vim if only window left is NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
-" Make comments white.
-hi comment ctermfg=white
+" Make comments yellow..
+hi comment ctermfg=yellow
 
 " Set statusbar to be 2 units
 set laststatus=2
