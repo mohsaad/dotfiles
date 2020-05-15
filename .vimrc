@@ -119,6 +119,9 @@ Plugin 'tpope/vim-obsession'
 " CtrlP (fuzzy file search)
 Plugin 'ctrlpvim/ctrlp.vim'
 
+" NerdCommenter
+Plugin 'preservim/nerdcommenter'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
