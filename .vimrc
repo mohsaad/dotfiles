@@ -94,9 +94,6 @@ Plugin 'scrooloose/nerdtree'
 " Tmux navigator
 Plugin 'christoomey/vim-tmux-navigator'
 
-" YouCompleteMe
-Plugin 'Valloric/YouCompleteMe'
-
 " Fugitive
 Plugin 'tpope/vim-fugitive'
 
